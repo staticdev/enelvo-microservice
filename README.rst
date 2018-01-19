@@ -26,9 +26,9 @@ Rodar os comandos:
   sudo docker ps -a
   
   # para parar o container olhe o nome dele no docker ps -a e execute
-  sudo docker stop NOMEDOCONTAINER
+  sudo docker stop enelvo
   # para remover um container (precisa parar primeiro)
-  sudo docker rm NOMEDOCONTAINER
+  sudo docker rm enelvo
 
 Exemplos de uso
 ---------------
