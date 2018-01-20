@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from sys import argv
-
 from flask import Flask, request, jsonify
 from enelvo.normaliser import Normaliser
 
