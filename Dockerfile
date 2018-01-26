@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN pip install -r requirements.txt
 
 # download enelvo
-RUN git clone https://github.com/staticdev/enelvo.git temp
+RUN git clone https://github.com/carolcoimbra/enelvo.git temp
 
 # install requirements
 RUN cd temp && pip install --user -r requirements.txt

@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 from enelvo.normaliser import Normaliser
 
-NORM = Normaliser()
+NORM = Normaliser(tokenizer='readable')
 
 APP = Flask(__name__)
 APP.config['JSON_AS_ASCII'] = False # retrieve UTF-8 messages
