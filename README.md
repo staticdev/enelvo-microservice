@@ -18,11 +18,11 @@ Rodar os comandos:
 
 ``` {.sourceCode .sh}
 # gerar a imagem
-sudo docker build -t staticdev/enelvo:0.1.1a .
+sudo docker build -t staticdev/enelvo:0.1.1 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name enelvo -d -p 5000:5000 staticdev/enelvo:0.1.1a
+sudo docker run --name enelvo -d -p 5000:5000 staticdev/enelvo:0.1.1
 # conferir processo rodando
 sudo docker ps -a
 
