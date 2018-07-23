@@ -1,4 +1,4 @@
-FROM python:3.5.4-slim
+FROM python:3.6.6-slim
 
 # set the working directory to /app
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN pip install -r requirements.txt
 
 # download enelvo
-RUN git clone https://github.com/carolcoimbra/enelvo.git temp
+RUN git clone https://github.com/tfcbertaglia/enelvo.git temp
 
 # install requirements
 RUN cd temp && pip install --user -r requirements.txt
@@ -24,5 +24,5 @@ RUN mv temp/enelvo enelvo
 EXPOSE 5000
 
 # run app.py when the container launches
-CMD ["gunicorn", "app:APP", "-b", ":5000"]
+CMD ["gunicorn", "__init__:create_app()", "-b", ":5000"]
 
