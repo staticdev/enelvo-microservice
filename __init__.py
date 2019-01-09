@@ -32,8 +32,14 @@ def create_app(test_config=None):
                 "error": "message is a required key",
         })
         
-        # Get a reply from the Normaliser.
-        reply = norm.normalise(message)
+        try:
+            # Get a reply from the Normaliser.
+            reply = norm.normalise(message)
+        except AttributeError as e:
+            return jsonify({
+                "status": "error",
+                "error": "exception thrown: " + str(e),
+            })
         
         # Send the response.
         return jsonify({
