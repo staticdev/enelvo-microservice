@@ -18,11 +18,11 @@ Rodar os comandos:
 
 ``` {.sourceCode .sh}
 # gerar a imagem
-sudo docker build -t staticdev/enelvo:0.1.2 .
+sudo docker build -t staticdev/enelvo:0.1.3 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name enelvo -d -p 5000:5000 staticdev/enelvo:0.1.2
+sudo docker run --name enelvo -d -p 5000:5000 staticdev/enelvo:0.1.3
 # conferir processo rodando
 sudo docker ps -a
 
@@ -31,7 +31,7 @@ sudo docker stop enelvo
 # para remover um container (precisa parar primeiro)
 sudo docker rm enelvo
 # para deletar a imagem
-sudo docker rmi staticdev/enelvo:0.1.2
+sudo docker rmi staticdev/enelvo:0.1.3
 ```
 
 Exemplos de uso

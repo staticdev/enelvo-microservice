@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN pip install -r requirements.txt
 
 # download enelvo
-RUN git clone https://github.com/tfcbertaglia/enelvo.git temp
+RUN git clone --branch v0.8.0 https://github.com/tfcbertaglia/enelvo.git temp
 
 # install requirements
 RUN cd temp && pip install --user -r requirements.txt
