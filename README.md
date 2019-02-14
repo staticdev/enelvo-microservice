@@ -1,18 +1,15 @@
-enelvo-microservice
-===================
+# enelvo-microservice
 
 Microsserviço REST para normalização pt\_BR usando o
 [Enelvo](https://github.com/tfcbertaglia/enelvo). Ideal para aplicações
 que precisam de normalização online como chatbots.
 
-Requisitos
-----------
+## Requisitos
 
--   Instalar Docker-CE 18.03.1+
--   1.2 Gb de espaço em disco para imagem
+- Instalar Docker-CE 18.03.1+
+- 1.2 Gb de espaço em disco para imagem
 
-Execução
---------
+## Execução
 
 Rodar os comandos:
 
@@ -34,8 +31,7 @@ sudo docker rm enelvo
 sudo docker rmi staticdev/enelvo:0.1.3
 ```
 
-Exemplos de uso
----------------
+## Exemplos de uso
 
 Basta fazer um POST da mensagem a ser normalizada na url /reply passando
 a mensagem no campo "message".
