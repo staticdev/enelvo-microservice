@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, request, jsonify
-from enelvo.normaliser import Normaliser
+
+""" Microservice for enelvo normalization method """
+
+import flask
+import enelvo.normaliser
 
 
-def create_app(test_config=None):
-    norm = Normaliser(tokenizer='readable')
+def create_app():
+    """ Application factory """
+    norm = enelvo.normaliser.Normaliser(tokenizer='readable')
 
-    app = Flask(__name__)
+    app = flask.Flask(__name__)
     app.config['JSON_AS_ASCII'] = False  # retrieve UTF-8 messages
 
     @app.route('/reply', methods=['POST'])
@@ -15,11 +19,10 @@ def create_app(test_config=None):
         Parameters (JSON):
         * username
         * message
-        * vars
         """
-        params = request.json
+        params = flask.request.json
         if not params:
-            return jsonify({
+            return flask.jsonify({
                 "status": "error",
                 "error": "Request must be of the application/json type!",
             })
@@ -28,7 +31,7 @@ def create_app(test_config=None):
 
         # Make sure the required params are present.
         if message is None:
-            return jsonify({
+            return flask.jsonify({
                 "status": "error",
                 "error": "message is a required key",
             })
@@ -36,14 +39,14 @@ def create_app(test_config=None):
         try:
             # Get a reply from the Normaliser.
             reply = norm.normalise(message)
-        except AttributeError as e:
-            return jsonify({
+        except AttributeError as ex:
+            return flask.jsonify({
                 "status": "error",
-                "error": "exception thrown: " + str(e),
+                "error": "exception thrown: " + str(ex),
             })
 
         # Send the response.
-        return jsonify({
+        return flask.jsonify({
             "status": "ok",
             "reply": reply
         })
