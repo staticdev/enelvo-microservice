@@ -4,6 +4,13 @@ Microsserviço REST para normalização pt\_BR usando o
 [Enelvo](https://github.com/tfcbertaglia/enelvo). Ideal para aplicações
 que precisam de normalização online como chatbots.
 
+## Geração interfaces
+
+```sh
+python3 -m pip install grpcio-tools
+python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. normalization.proto
+```
+
 ## Requisitos
 
 - Instalar Docker-CE 18.03.1+
@@ -13,13 +20,13 @@ que precisam de normalização online como chatbots.
 
 Rodar os comandos:
 
-``` {.sourceCode .sh}
+```sh
 # gerar a imagem
-sudo docker build -t staticdev/enelvo:0.9.3 .
+sudo docker build -t staticdev/enelvo:1.0.0 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name enelvo -d -p 5000:5000 staticdev/enelvo:0.9.3
+sudo docker run --name enelvo -d -p 50051:50051 staticdev/enelvo:1.0.0
 # conferir processo rodando
 sudo docker ps -a
 
@@ -28,7 +35,7 @@ sudo docker stop enelvo
 # para remover um container (precisa parar primeiro)
 sudo docker rm enelvo
 # para deletar a imagem
-sudo docker rmi staticdev/enelvo:0.9.3
+sudo docker rmi staticdev/enelvo:1.0.0
 ```
 
 ## Exemplos de uso
@@ -41,7 +48,7 @@ requisição no campo "status", tendo com valor padrão para sucesso "ok".
 
 Exemplo curl:
 
-``` {.sourceCode .sh}
+```sh
 curl -X POST \
   http://localhost:5000/reply \
   -H 'content-type: application/json; charset=utf-8' \
@@ -52,7 +59,7 @@ curl -X POST \
 
 Exemplo python3 nativo (http.client):
 
-``` {.sourceCode .python}
+```python
 import http.client
 
 conn = http.client.HTTPConnection("localhost:5000")

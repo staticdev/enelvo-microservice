@@ -1,54 +1,56 @@
 # -*- coding: utf-8 -*-
-
 """ Microservice for enelvo normalization method """
 
-import flask
+from concurrent import futures
+import logging
+
 import enelvo.normaliser
+import grpc
+
+import normalization_pb2
+import normalization_pb2_grpc
 
 
-def create_app():
-    """ Application factory """
-    norm = enelvo.normaliser.Normaliser(tokenizer='readable')
+def get_normalization(normaliser, message):
+    """Normalizes the message
 
-    app = flask.Flask(__name__)
-    app.config['JSON_AS_ASCII'] = False  # retrieve UTF-8 messages
+    Arguments:
+        normaliser {enelvo.normaliser.Normaliser} -- [instance of Enelvo]
+        message {string} -- [original message]
 
-    @app.route('/reply', methods=['POST'])
-    def reply():
-        """Fetch a reply from RiveScript.
-        Parameters (JSON):
-        * username
-        * message
-        """
-        params = flask.request.json
-        if not params:
-            return flask.jsonify({
-                "status": "error",
-                "error": "Request must be of the application/json type!",
-            })
+    Returns:
+        message [string or None] -- [normalized string]
+    """
+    try:
+        return normaliser.normalise(message)
+    except AttributeError:
+        return None
 
-        message = params.get("message")
 
-        # Make sure the required params are present.
-        if message is None:
-            return flask.jsonify({
-                "status": "error",
-                "error": "message is a required key",
-            })
+class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
+    """Provides methods that implement functionality of normalization server."""
 
-        try:
-            # Get a reply from the Normaliser.
-            reply = norm.normalise(message)
-        except AttributeError as ex:
-            return flask.jsonify({
-                "status": "error",
-                "error": "exception thrown: " + str(ex),
-            })
+    def __init__(self):
+        self.normaliser = enelvo.normaliser.Normaliser(tokenizer='readable')
 
-        # Send the response.
-        return flask.jsonify({
-            "status": "ok",
-            "reply": reply
-        })
+    def GetNormalisation(self, request, context):
+        reply = get_normalization(self.normaliser, request)
+        if reply is None:
+            return normalization_pb2.Message(text="")
+        else:
+            return reply
 
-    return app
+
+def serve():
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    normalization_pb2_grpc.add_NormalizationServicer_to_server(
+        NormalizationServicer(), server
+    )
+    server.add_insecure_port('[::]:50051')
+    server.start()
+    server.wait_for_termination()
+
+
+if __name__ == '__main__':
+    logging.basicConfig()
+    serve()

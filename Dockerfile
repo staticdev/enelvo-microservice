@@ -1,4 +1,4 @@
-FROM python:3.7.5-alpine
+FROM python:3.7.6-slim-stretch
 
 # set the working directory to /app
 WORKDIR /app
@@ -6,25 +6,16 @@ WORKDIR /app
 # copy the current directory contents into the container at /app
 COPY . /app
 
-RUN apk add --no-cache --virtual .build-deps \
-            gcc \
-            g++ \
-            musl-dev \
-            git \
-            gfortran \
-            openblas-dev \
+RUN apt-get update && apt-get install -y git \
   && pip install -r requirements.txt \
-  && git clone --branch 0.9.1 https://github.com/tfcbertaglia/enelvo.git enelvo-src-0.9.1 \
-  && cd enelvo-src-0.9.1 \
+  && git clone https://github.com/tfcbertaglia/enelvo.git enelvo-src \
+  && cd enelvo-src \
   && python setup.py install \
-  && apk del .build-deps \
   && cd .. \
-  && mv enelvo-src-0.9.1/enelvo enelvo \
-  && rm -fr enelvo-src-0.9.1 \
-  && apk add --no-cache libstdc++ \
-             openblas-dev
+  && mv enelvo-src/enelvo enelvo \
+  && rm -fr enelvo-src
 
-EXPOSE 5000
+EXPOSE 50051
 
 # run app.py when the container launches
-CMD ["gunicorn", "app:create_app()", "-b", ":5000"]
+CMD ["python", "app.py"]

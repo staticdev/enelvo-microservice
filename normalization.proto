@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package normalization;
+
+service Normalization {
+  rpc GetNormalization(Message) returns (Message) {}
+}
+
+message Message {
+  string text = 1;
+}
