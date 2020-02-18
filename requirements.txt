@@ -1,7 +1,2 @@
 grpcio==1.27.1
 protobuf==3.11.3
-numpy==1.17.4
-gensim==3.8.1
-emoji==0.5.1
-tabulate==0.8.2
-editdistance==0.5.2
