@@ -13,8 +13,8 @@ python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. normalizatio
 
 ## Requisitos
 
-- Instalar Docker-CE 18.03.1+
-- 1.1 Gb de espaço em disco para imagem
+- Instalar Docker-CE 19.03+
+- 900 MB de espaço em disco para imagem
 
 ## Execução
 
@@ -40,39 +40,4 @@ sudo docker rmi staticdev/enelvo:1.0.0
 
 ## Exemplos de uso
 
-Basta fazer um POST da mensagem a ser normalizada na url /reply passando
-a mensagem no campo "message".
-
-A mensagem normalizada é retornada no campo "reply". O status da
-requisição no campo "status", tendo com valor padrão para sucesso "ok".
-
-Exemplo curl:
-
-```sh
-curl -X POST \
-  http://localhost:5000/reply \
-  -H 'content-type: application/json; charset=utf-8' \
-  -d '{
-    "message": "oi td bm?"
-}'
-```
-
-Exemplo python3 nativo (http.client):
-
-```python
-import http.client
-
-conn = http.client.HTTPConnection("localhost:5000")
-
-payload = "{\"message\": \"oi td bm?\"}"
-
-headers = {
-    'content-type': "application/json; charset=utf-8"
-}
-
-conn.request("POST", "/reply", payload, headers)
-res = conn.getresponse()
-data = res.read()
-
-print(data.decode("utf-8"))
-```
+Foi criado um cliente gRPC de [exemplo](normalization_client.py).

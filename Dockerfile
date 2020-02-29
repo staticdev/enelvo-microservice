@@ -22,4 +22,4 @@ RUN pip install -r requirements.txt \
 EXPOSE 50051
 
 # run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python", "normalization_server.py"]

@@ -2,10 +2,13 @@ syntax = "proto3";
 
 package normalization;
 
+// Interface for normalization
 service Normalization {
+  // Gets normalization from one message
   rpc GetNormalization(Message) returns (Message) {}
 }
 
+// Unary message
 message Message {
   string text = 1;
 }

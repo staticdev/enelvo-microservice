@@ -5,8 +5,8 @@ import normalization_pb2 as normalization__pb2
 
 
 class NormalizationStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Interface for normalization
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -22,8 +22,8 @@ class NormalizationStub(object):
 
 
 class NormalizationServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Interface for normalization
+  """
 
   def GetNormalization(self, request, context):
     # missing associated documentation comment in .proto file

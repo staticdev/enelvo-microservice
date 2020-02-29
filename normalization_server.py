@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Microservice for enelvo normalization method """
+"""Microservice for enelvo normalization method."""
 
 from concurrent import futures
 import logging
@@ -33,12 +33,12 @@ class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
     def __init__(self):
         self.normaliser = enelvo.normaliser.Normaliser(tokenizer='readable')
 
-    def GetNormalisation(self, request, context):
-        reply = get_normalization(self.normaliser, request)
+    def GetNormalization(self, request, context):
+        reply = get_normalization(self.normaliser, request.text)
         if reply is None:
             return normalization_pb2.Message(text="")
         else:
-            return reply
+            return normalization_pb2.Message(text=reply)
 
 
 def serve():
