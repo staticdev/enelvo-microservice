@@ -31,7 +31,7 @@ class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
     """Provides methods that implement functionality of normalization server."""
 
     def __init__(self):
-        self.normaliser = enelvo.normaliser.Normaliser(tokenizer='readable')
+        self.normaliser = enelvo.normaliser.Normaliser(tokenizer="readable")
 
     def GetNormalization(self, request, context):
         reply = get_normalization(self.normaliser, request.text)
@@ -46,11 +46,11 @@ def serve():
     normalization_pb2_grpc.add_NormalizationServicer_to_server(
         NormalizationServicer(), server
     )
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port("[::]:50051")
     server.start()
     server.wait_for_termination()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.basicConfig()
     serve()
