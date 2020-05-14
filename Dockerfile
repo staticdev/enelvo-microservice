@@ -1,23 +1,26 @@
 FROM python:3.7.6-slim-stretch as builder
 
-RUN apt-get update && apt-get install -y git \
+ENV PATH="/root/.local/bin:/root/.poetry/bin:${PATH}"
+
+RUN apt-get update && apt-get install -y curl git \
+ && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python \
  && git clone https://github.com/tfcbertaglia/enelvo.git enelvo-src \
  && cd enelvo-src \
- && python setup.py bdist_wheel
+ && poetry build
 
 FROM python:3.7.6-slim-stretch
 
 # set the working directory to /app
 WORKDIR /app
 
-COPY --from=builder /enelvo-src/dist/Enelvo*.whl /app
+COPY --from=builder /enelvo-src/dist/enelvo*.whl /app
 
 # copy the current directory contents into the container at /app
 COPY . /app
 
 RUN pip install -r requirements.txt \
- && pip install Enelvo*.whl \
- && rm -fr Enelvo*.whl
+ && pip install enelvo*.whl \
+ && rm -fr enelvo*.whl
 
 EXPOSE 50051
 

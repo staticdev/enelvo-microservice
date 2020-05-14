@@ -1,25 +1,26 @@
 # -*- coding: utf-8 -*-
 """Microservice for enelvo normalization method."""
-
-from concurrent import futures
 import logging
+from concurrent import futures
+from typing import Optional
 
 import enelvo.normaliser
 import grpc
-
 import normalization_pb2
 import normalization_pb2_grpc
 
 
-def get_normalization(normaliser, message):
-    """Normalizes the message
+def get_normalization(
+    normaliser: enelvo.normaliser.Normaliser, message: str
+) -> Optional[str]:
+    """Normalizes the message.
 
     Arguments:
-        normaliser {enelvo.normaliser.Normaliser} -- [instance of Enelvo]
-        message {string} -- [original message]
+        normaliser: instance of Enelvo.
+        message: original message.
 
     Returns:
-        message [string or None] -- [normalized string]
+        Optional[str]: normalized string.
     """
     try:
         return normaliser.normalise(message)
@@ -31,9 +32,18 @@ class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
     """Provides methods that implement functionality of normalization server."""
 
     def __init__(self):
+        """Initializes NormalizationServicer."""
         self.normaliser = enelvo.normaliser.Normaliser(tokenizer="readable")
 
-    def GetNormalization(self, request, context):
+    def GetNormalization(self, request):
+        """Get text normalization.
+
+        Args:
+            request: original message.
+
+        Returns:
+            str: normalized message.
+        """
         reply = get_normalization(self.normaliser, request.text)
         if reply is None:
             return normalization_pb2.Message(text="")
@@ -42,6 +52,7 @@ class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
 
 
 def serve():
+    """Starts the server."""
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     normalization_pb2_grpc.add_NormalizationServicer_to_server(
         NormalizationServicer(), server
