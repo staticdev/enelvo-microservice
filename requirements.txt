@@ -1,2 +1,2 @@
 grpcio==1.29.0
-protobuf==3.11.3
+protobuf==3.12.0
