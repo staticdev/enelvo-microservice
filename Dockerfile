@@ -1,4 +1,4 @@
-FROM python:3.7.6-slim-stretch as builder
+FROM python:3.8.3-slim-buster as builder
 
 ENV PATH="/root/.local/bin:/root/.poetry/bin:${PATH}"
 
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y curl git \
  && cd enelvo-src \
  && poetry build
 
-FROM python:3.7.6-slim-stretch
+FROM python:3.8.3-slim-buster
 
 # set the working directory to /app
 WORKDIR /app
