@@ -12,7 +12,7 @@ python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. normalizatio
 ## Requisitos
 
 - Instalar Docker-CE 19.03+
-- 650 MB de espaço em disco para imagem
+- 550 MB de espaço em disco para imagem
 
 ## Execução
 
