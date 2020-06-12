@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "enelvo-microservice"
-version = "0.10.0"
+version = "0.9.4"
 description = "Enelvo pt_BR normalizer microservice."
 authors = ["Thiago Carvalho D'Ávila <thiagocavila@gmail.com>"]
 license = "MIT"
