@@ -9,7 +9,7 @@ homepage = "https://github.com/staticdev/enelvo-microservice"
 repository = "https://github.com/staticdev/enelvo-microservice"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 grpcio = "^1.29.0"
 protobuf = "^3.12.2"
 

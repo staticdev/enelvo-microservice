@@ -6,6 +6,7 @@ from typing import Optional
 
 import enelvo.normaliser
 import grpc
+
 import normalization_pb2
 import normalization_pb2_grpc
 
