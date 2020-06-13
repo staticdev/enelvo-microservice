@@ -36,11 +36,12 @@ class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
         """Initializes NormalizationServicer."""
         self.normaliser = enelvo.normaliser.Normaliser(tokenizer="readable")
 
-    def GetNormalization(self, request):
+    def GetNormalization(self, request, context):
         """Get text normalization.
 
         Args:
             request: original message.
+            context: function context.
 
         Returns:
             str: normalized message.
