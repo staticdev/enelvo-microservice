@@ -6,7 +6,7 @@ Microsserviço REST para normalização pt_BR usando o [Enelvo](https://github.c
 
 ```sh
 python3 -m pip install grpcio-tools
-python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. normalization.proto
+python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. protos/normalization.proto
 ```
 
 ## Requisitos
