@@ -38,4 +38,4 @@ sudo docker rmi staticdev/enelvo:0.9.4
 
 ## Exemplos de uso
 
-Foi criado um cliente gRPC de [exemplo](normalization_client.py).
+Foi criado um cliente gRPC de [exemplo](examples/normalization_client.py).
