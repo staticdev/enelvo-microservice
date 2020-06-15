@@ -2,17 +2,17 @@
 
 Microsserviço REST para normalização pt_BR usando o [Enelvo](https://github.com/tfcbertaglia/enelvo). Ideal para aplicações que precisam de normalização online como chatbots.
 
+## Requisitos
+
+- Instalar Docker-CE 19.03+
+- 550 MB de espaço em disco para imagem
+
 ## Geração interfaces
 
 ```sh
 python3 -m pip install grpcio-tools
 python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. protos/normalization.proto
 ```
-
-## Requisitos
-
-- Instalar Docker-CE 19.03+
-- 550 MB de espaço em disco para imagem
 
 ## Execução
 
@@ -36,6 +36,6 @@ sudo docker rm enelvo
 sudo docker rmi staticdev/enelvo:0.9.4
 ```
 
-## Exemplos de uso
+## Exemplo de uso
 
 Foi criado um cliente gRPC de [exemplo](examples/normalization_client.py).
