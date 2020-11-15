@@ -5,8 +5,7 @@ import normalization_pb2 as normalization__pb2
 
 
 class NormalizationStub(object):
-    """Interface for normalization.
-    """
+    """Interface for normalization."""
 
     def __init__(self, channel):
         """Constructor.
@@ -22,12 +21,10 @@ class NormalizationStub(object):
 
 
 class NormalizationServicer(object):
-    """Interface for normalization.
-    """
+    """Interface for normalization."""
 
     def GetNormalization(self, request, context):
-        """Gets normalization from one message.
-        """
+        """Gets normalization from one message."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -49,8 +46,7 @@ def add_NormalizationServicer_to_server(servicer, server):
 
 # This class is part of an EXPERIMENTAL API.
 class Normalization(object):
-    """Interface for normalization.
-    """
+    """Interface for normalization."""
 
     @staticmethod
     def GetNormalization(
