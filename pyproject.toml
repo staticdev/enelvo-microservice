@@ -16,7 +16,7 @@ protobuf = "^3.14.0"
 [tool.poetry.dev-dependencies]
 reorder-python-imports = "^2.3.6"
 black = "^20.8b1"
-pre-commit-hooks = "^3.3.0"
+pre-commit-hooks = "^3.4.0"
 flake8 = "^3.8.4"
 
 [build-system]
