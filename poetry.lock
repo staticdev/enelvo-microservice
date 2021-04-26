@@ -172,7 +172,7 @@ python-versions = "*"
 
 [[package]]
 name = "reorder-python-imports"
-version = "2.4.0"
+version = "2.5.0"
 description = "Tool for reordering python imports"
 category = "dev"
 optional = false
@@ -251,7 +251,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "b94fc0e966ccb57e8a6c1a8771d1c3f2c492c8d88f9fe7d241746787149adbf7"
+content-hash = "45821de4b74c4fa67d67602ba4ec26bd30e402d17aa800ba42584ec444b5dd49"
 
 [metadata.files]
 appdirs = [
@@ -424,8 +424,8 @@ regex = [
     {file = "regex-2020.11.13.tar.gz", hash = "sha256:83d6b356e116ca119db8e7c6fc2983289d87b27b3fac238cfe5dca529d884562"},
 ]
 reorder-python-imports = [
-    {file = "reorder_python_imports-2.4.0-py2.py3-none-any.whl", hash = "sha256:995a2a93684af31837f30cf2bcddce2e7eb17f0d2d69c9905da103baf8cec42b"},
-    {file = "reorder_python_imports-2.4.0.tar.gz", hash = "sha256:9a9e7774d66e9b410b619f934e8206a63dce5be26bd894f5006eb764bba6a26d"},
+    {file = "reorder_python_imports-2.5.0-py2.py3-none-any.whl", hash = "sha256:ea237fabc1812c33bd9549b55e7ab15f096cd46fea336b7b0a7b7a297cabcc06"},
+    {file = "reorder_python_imports-2.5.0.tar.gz", hash = "sha256:7b8bd21cacc78be5674cc7f9a3fbeb63404f810ec3cbdd6b10f87e2dbb62f7cf"},
 ]
 "ruamel.yaml" = [
     {file = "ruamel.yaml-0.16.12-py2.py3-none-any.whl", hash = "sha256:012b9470a0ea06e4e44e99e7920277edf6b46eee0232a04487ea73a7386340a5"},
