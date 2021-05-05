@@ -19,7 +19,7 @@ cached-property = "*"
 
 [[package]]
 name = "black"
-version = "21.4b2"
+version = "21.5b0"
 description = "The uncompromising code formatter."
 category = "dev"
 optional = false
@@ -251,7 +251,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "9d38efa02e012486607566bf4dc098999234ae424340956d293bd90971e0c1a2"
+content-hash = "8057ed6784c4712f8ada304707c5821f194433aecabb55a99cd82bd93b21055c"
 
 [metadata.files]
 appdirs = [
@@ -263,8 +263,8 @@ appdirs = [
     {file = "aspy.refactor_imports-2.1.1.tar.gz", hash = "sha256:eec8d1a73bedf64ffb8b589ad919a030c1fb14acf7d1ce0ab192f6eedae895c5"},
 ]
 black = [
-    {file = "black-21.4b2-py3-none-any.whl", hash = "sha256:bff7067d8bc25eb21dcfdbc8c72f2baafd9ec6de4663241a52fb904b304d391f"},
-    {file = "black-21.4b2.tar.gz", hash = "sha256:fc9bcf3b482b05c1f35f6a882c079dc01b9c7795827532f4cc43c0ec88067bbc"},
+    {file = "black-21.5b0-py3-none-any.whl", hash = "sha256:0e80435b8a88f383c9149ae89d671eb2095b72344b0fe8a1d61d2ff5110ed173"},
+    {file = "black-21.5b0.tar.gz", hash = "sha256:9dc2042018ca10735366d944c2c12d9cad6dec74a3d5f679d09384ea185d9943"},
 ]
 cached-property = [
     {file = "cached-property-1.5.2.tar.gz", hash = "sha256:9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"},
