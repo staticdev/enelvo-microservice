@@ -125,7 +125,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "pre-commit-hooks"
-version = "3.4.0"
+version = "4.0.1"
 description = "Some out-of-the-box hooks for pre-commit."
 category = "dev"
 optional = false
@@ -251,7 +251,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "2ed06e6d108da1e7671ebbca9e8a7cf1927d1753ff0c3e2dde46059d797cafe0"
+content-hash = "252de830117c18d0521d561f4b530b65d56208264b23fed74407bbab2239a3b9"
 
 [metadata.files]
 appdirs = [
@@ -348,8 +348,8 @@ pathspec = [
     {file = "pathspec-0.8.1.tar.gz", hash = "sha256:86379d6b86d75816baba717e64b1a3a3469deb93bb76d613c9ce79edc5cb68fd"},
 ]
 pre-commit-hooks = [
-    {file = "pre_commit_hooks-3.4.0-py2.py3-none-any.whl", hash = "sha256:b1d329fc712f53f56af7c4a0ac08c414a7fcfd634dbd829c3a03f39cfb9c3574"},
-    {file = "pre_commit_hooks-3.4.0.tar.gz", hash = "sha256:57e377b931aceead550e4a7bdbe8065e79e371e80f593b5b6d1129e63a77154f"},
+    {file = "pre_commit_hooks-4.0.1-py2.py3-none-any.whl", hash = "sha256:6efe92c7613c311abc7dd06817fc016f222d9289fe24b261e64412b0af96c662"},
+    {file = "pre_commit_hooks-4.0.1.tar.gz", hash = "sha256:99f1b9fc00a82e6588990b6b92edcdf4bec9c3d65c6272b8867be389055ce05e"},
 ]
 protobuf = [
     {file = "protobuf-3.17.0-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:15351df904347da2081a2eebc42b192c29724eb57dbe56dae440be843f1e4779"},
