@@ -17,7 +17,7 @@ protobuf = "^3.18.1"
 reorder-python-imports = "^2.6.0"
 black = "^21.9b0"
 pre-commit-hooks = "^4.0.1"
-flake8 = "^3.9.2"
+flake8 = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
