@@ -1,10 +1,10 @@
 [[package]]
 name = "aspy.refactor-imports"
-version = "2.1.1"
+version = "2.2.1"
 description = "Utilities for refactoring imports in python-like syntax."
 category = "dev"
 optional = false
-python-versions = ">=3.6.1"
+python-versions = ">=3.7"
 
 [package.dependencies]
 cached-property = "*"
@@ -169,14 +169,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "reorder-python-imports"
-version = "2.7.0"
+version = "2.7.1"
 description = "Tool for reordering python imports"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-"aspy.refactor-imports" = ">=2.1.0"
+"aspy.refactor-imports" = ">=2.2.1"
 
 [[package]]
 name = "ruamel.yaml"
@@ -256,12 +256,12 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "0d143cf89a82fee890870efd03200dd7c0598f8d4b3bcb403b47126dcdb125d3"
+content-hash = "b4e97ac3471dcb988f7c14891d8f7b0a64e16050d2024850f8668c39474b076f"
 
 [metadata.files]
 "aspy.refactor-imports" = [
-    {file = "aspy.refactor_imports-2.1.1-py2.py3-none-any.whl", hash = "sha256:9df76bf19ef81620068b785a386740ab3c8939fcbdcebf20c4a4e0057230d782"},
-    {file = "aspy.refactor_imports-2.1.1.tar.gz", hash = "sha256:eec8d1a73bedf64ffb8b589ad919a030c1fb14acf7d1ce0ab192f6eedae895c5"},
+    {file = "aspy.refactor_imports-2.2.1-py2.py3-none-any.whl", hash = "sha256:ace9ca78abf6cfdd20ea1a321b75b20c8cc2c1af58aecb9dc4ba9d6f70f74645"},
+    {file = "aspy.refactor_imports-2.2.1.tar.gz", hash = "sha256:f5b2fcbf9fd68361168588f14eda64d502d029eefe632d15094cd0683ae12984"},
 ]
 black = [
     {file = "black-21.12b0-py3-none-any.whl", hash = "sha256:a615e69ae185e08fdd73e4715e260e2479c861b5740057fde6e8b4e3b7dd589f"},
@@ -386,8 +386,8 @@ pyflakes = [
     {file = "pyflakes-2.4.0.tar.gz", hash = "sha256:05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"},
 ]
 reorder-python-imports = [
-    {file = "reorder_python_imports-2.7.0-py2.py3-none-any.whl", hash = "sha256:76ac259aa8ada10808a63c6816087c84aec6334c2049a5049e80b74cac575f43"},
-    {file = "reorder_python_imports-2.7.0.tar.gz", hash = "sha256:8f6e8ea23905058f964d12a03b7dfb1227d11a877c2d1db0535039a10b568cbb"},
+    {file = "reorder_python_imports-2.7.1-py2.py3-none-any.whl", hash = "sha256:5477c008cd7a5f2dbe32a35e90d74b5a3427468731441f033034310e427143a3"},
+    {file = "reorder_python_imports-2.7.1.tar.gz", hash = "sha256:1ae34422f13f5a4b4669f340774909d721bfc0a8311973c70b3a50540b595bc5"},
 ]
 "ruamel.yaml" = [
     {file = "ruamel.yaml-0.16.12-py2.py3-none-any.whl", hash = "sha256:012b9470a0ea06e4e44e99e7920277edf6b46eee0232a04487ea73a7386340a5"},
